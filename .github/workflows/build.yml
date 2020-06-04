@@ -1,0 +1,16 @@
+name: Docker Image CI
+on: [push]
+jobs:
+  build:
+    name: Ansible ${{ matrix.version_list }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version_list: ["2.4", "2.5", "2.6", "2.7", "2.8", "2.9"]
+    steps:
+    - uses: actions/checkout@v1
+    - run: ./scripts/build.sh --push
+      env:
+        VERSION_LIST: ${{ matrix.version_list }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
