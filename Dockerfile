@@ -12,7 +12,7 @@ RUN set -eux \
         then ANSIBLE_PKG="ansible==${ANSIBLE_VERSION}.*"; \
         else ANSIBLE_PKG="ansible==${ANSIBLE_VERSION}"; \
     fi \
-    && pip3 install ${ANSIBLE_PKG}
+    && pip3 install ${ANSIBLE_PKG} jmespath
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
