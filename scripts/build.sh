@@ -28,7 +28,7 @@ fi
 
 ## iterate over and build each version; by default building latest version;
 ## build matrix will override to build each supported version
-VERSION_LIST="${VERSION_LIST:-"latest"}"
+VERSION_LIST="${VERSION_LIST:-"2.9"}"
 
 for ANSIBLE_VERSION in ${VERSION_LIST}; do
   IMAGE_TAG="davidalger/ansible:${ANSIBLE_VERSION}"

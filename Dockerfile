@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 LABEL maintainer="David Alger"
 
 RUN yum -y install sudo openssh-clients python3-pip \
