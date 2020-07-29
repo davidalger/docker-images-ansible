@@ -1,7 +1,7 @@
 FROM centos:8
 LABEL maintainer="David Alger"
 
-RUN yum install -y openssh-clients python3-pip epel-release \
+RUN yum install -y openssh-clients python3-pip epel-release perl \
     && yum install -y sshpass \
     && yum clean all \
     && rm -rf /var/cache/yum
